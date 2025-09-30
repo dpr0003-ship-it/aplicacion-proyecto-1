@@ -8,18 +8,18 @@ class ProductsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Productos'),
+        title: const Text('Productos'),
         actions: [
           IconButton(
-            icon: Icon(Icons.logout),
+            icon: const Icon(Icons.logout),
             onPressed: () async {
               await FirebaseAuth.instance.signOut();
             },
           ),
         ],
       ),
-      body: Center(
-        child: Text('Bienvenido! Aquí irán los productos.'),
+      body: const Center(
+        child: Text('¡Bienvenido! Aquí irán los productos.'),
       ),
     );
   }
