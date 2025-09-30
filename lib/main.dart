@@ -4,13 +4,13 @@ import 'package:firebase_auth/firebase_auth.dart';
 
 import 'login_screen.dart';
 import 'products_screen.dart';
-import 'firebase_options.dart'; // <-- Importa las opciones
+import 'firebase_options.dart'; 
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   try {
     await Firebase.initializeApp(
-      options: DefaultFirebaseOptions.currentPlatform, // <-- Usa las opciones correctas
+      options: DefaultFirebaseOptions.currentPlatform, 
     );
     runApp(const MyApp());
   } catch (e) {

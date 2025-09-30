@@ -42,7 +42,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
             ),
             TextField(
               controller: passwordController,
-              decoration: const InputDecoration(labelText: 'Password'),
+              decoration: const InputDecoration(labelText: 'Contraseña'),
               obscureText: true,
             ),
             if (errorMessage != null) ...[
