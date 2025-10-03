@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-
 import '../../core/utils/validators.dart';
 import '../../core/models/videojuego_model.dart';
 import '../../core/providers/videojuego_provider.dart';
-
 
 class AddEditVideojuegoScreen extends StatefulWidget {
   final Videojuego? initial;
@@ -52,23 +50,17 @@ class _AddEditVideojuegoScreenState extends State<AddEditVideojuegoScreen> {
             ),
             const SizedBox(height: 12),
             DropdownButtonFormField<GameType>(
-  initialValue: _tipo, // ✅
-  items: GameType.values
-      .map((t) => DropdownMenuItem<GameType>(value: t, child: Text(t.label)))
-      .toList(),
-  onChanged: (v) => setState(() => _tipo = v ?? _tipo), // <- aquí estaba el typo
-),
-
-
+              initialValue: _tipo,
+              decoration: const InputDecoration(labelText: 'Tipo / Género'),
+              items: GameType.values.map((t)=>DropdownMenuItem(value:t, child: Text(t.label))).toList(),
+              onChanged: (v)=> setState(()=> _tipo = v ?? _tipo),
+            ),
+            const SizedBox(height: 12),
             DropdownButtonFormField<AgeRating>(
-  initialValue: _edad, // ✅
-  items: AgeRating.values
-      .map((r) => DropdownMenuItem<AgeRating>(value: r, child: Text(r.label)))
-      .toList(),
-  onChanged: (v) => setState(() => _edad = v ?? _edad),
-),
-
-
+              initialValue: _edad,
+              decoration: const InputDecoration(labelText: 'Clasificación por edad'),
+              items: AgeRating.values.map((r)=>DropdownMenuItem(value:r, child: Text(r.label))).toList(),
+              onChanged: (v)=> setState(()=> _edad = v ?? _edad),
             ),
             const SizedBox(height: 12),
             TextFormField(
